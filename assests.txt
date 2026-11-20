@@ -1,0 +1,18 @@
+Repo: https://github.com/Apollo-Level2-Web-Dev/be-a-node-express-expert-b8/tree/module-9
+
+There tow type of Middleware ; 
+- Built-In/Default : Express diya jokhon kono middleware make kora hoise express ar vetor tokhon ei express ar kisu function diya ai middleware make kori, and jokhon amra npm i use kore kono built in middleware make kori ta amader express ke anek valo kore support kore
+
+- Custom : Personal logic, buissiniess logic, validation diya verify korle atake custom middleware bole
+
+//? Middleware ki ki kore?
+- Business Logic handle 
+- Validation 
+- Logger
+
+
+// What is Logger ?
+ke kon end point a hit kortase tar history rakhte pare
+
+
+
