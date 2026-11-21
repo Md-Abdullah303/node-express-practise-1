@@ -1,11 +1,12 @@
 import app from "./app";
+import { config } from "./config";
 import { initDB } from "./db";
 
 const main = () => {
 
     initDB()
-    app.listen(8000, () => {
-        console.log(`Server was Running on port : ${8000}`)
+    app.listen(config.port, () => {
+        console.log(`Server was Running on port : ${config.port}`)
     })
 }
 
