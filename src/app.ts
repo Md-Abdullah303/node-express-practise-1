@@ -3,6 +3,7 @@ import { userRouter } from "./modules/users/user.route";
 import { authRouter } from "./modules/auth/auth.route";
 import logger from "./middleware/logger";
 import cors from "cors"
+import globalErrorHandler from "./middleware/globalErrorHandler";
 
 
 const app = express()
@@ -35,5 +36,8 @@ app.get("/", (req: Request, res: Response) => {
         message: "Server is Running.",
     })
 })
+
+app.use(globalErrorHandler);
+
 
 export default app;
