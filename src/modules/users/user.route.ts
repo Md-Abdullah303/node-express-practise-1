@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { userController } from "./user.controller";
 import auth from "../../middleware/auth";
+import { USER_ROLE } from "../../types";
 
 
 const router = Router()
@@ -8,9 +9,10 @@ const router = Router()
 export const userRouter = router
 
 
+
 //* All methods
-router.get("/",auth, userController.getAllUser)
-router.get("/:id", userController.getUser)
+router.get("/",auth(USER_ROLE.admin, USER_ROLE.agent), userController.getAllUser)
+router.get("/:id",auth(USER_ROLE.admin, USER_ROLE.agent, USER_ROLE.user), userController.getUser)
 router.post("/", userController.createUser)
-router.put("/:id", userController.updateUser)
+router.put("/:id",auth(USER_ROLE.admin, USER_ROLE.user), userController.updateUser)
 router.delete("/:id", userController.deleteUser)

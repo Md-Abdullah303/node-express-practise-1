@@ -5,6 +5,7 @@ export interface payloadForCreateUser {
     email: string
     password: string,
     age: number
+    role ?: string
 }
 export interface payloadForUpdateUser {
     name: string;
