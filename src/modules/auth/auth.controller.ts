@@ -32,6 +32,30 @@ const login = async (req: Request, res: Response) => {
     }
 }
 
+
+
+
+const generator = async (req: Request, res: Response) => {
+    try {
+        // console.log(req.cookies.refreshToken)
+        const result = await authService.generatorAccessToken(req.cookies.refreshToken)
+
+
+        res.status(200).json({
+            success: true,
+            message: "Access Token Generated!",
+            data: result
+        })
+    } catch (error: any) {
+        res.status(500).json({
+            success: false,
+            message: error?.message,
+            data: error
+        })
+    }
+}
+
 export const authController = {
     login,
+    generator
 }
